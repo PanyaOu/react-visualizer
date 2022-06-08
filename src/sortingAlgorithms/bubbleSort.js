@@ -1,9 +1,8 @@
-function BubbleSort({ props }) {
-  console.log(props.array, "hello");
-  // let array = props
-  let array = props.array;
+//TO DO: implement and pause and continue button for this
 
+async function BubbleSort(array, updateArray, updateAlgoName) {
   var count = 0;
+  updateAlgoName("- Bubble Sort");
 
   for (;;) {
     let i = 0;
@@ -12,7 +11,8 @@ function BubbleSort({ props }) {
     for (j = 1; j < array.length; j++) {
       if (array[j] <= array[i]) {
         swap(array, i, j);
-        props.handleChange([...array]);
+        updateArray(array);
+        await sleep(1);
       }
       i = i + 1;
     }
@@ -21,6 +21,7 @@ function BubbleSort({ props }) {
       break;
     }
   }
+  return array;
 }
 
 function sleep(ms) {
