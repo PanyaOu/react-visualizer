@@ -1,0 +1,28 @@
+h1 {
+    text-align: center  ;
+}
+
+.array-container  {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+}
+
+.array-bar {
+    width: 15px;
+    background-color: beige;
+    display: inline-block;
+    margin: 0 1px;
+    position: relative;
+    font-size: smaller;
+    text-align-last: center;
+    vertical-align:text-top;
+}
+
+.button-container {
+    text-align: center;
+    margin: 10px;
+    position:absolute;
+    bottom:0;
+    right: 50%;
+}
