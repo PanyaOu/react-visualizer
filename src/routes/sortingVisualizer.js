@@ -7,7 +7,7 @@ const HEIGHT_MULTIPLIER = 3;
 
 function SortingVisualizer() {
   let [flag, setFlag] = useState(false);
-  var [array, setArray] = useState([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
+  var [array, setArray] = useState([]);
   var [algoName, setAlgoName] = useState("");
 
   function updateArray(array) {
@@ -22,7 +22,7 @@ function SortingVisualizer() {
     return Math.floor(Math.random() * max);
   }
 
-  function resetArray() {
+  function createArray() {
     setFlag(true);
     const new_array = [];
     for (let i = 0; i < 100; i++) {
@@ -57,7 +57,7 @@ function SortingVisualizer() {
         ))}
       </div>
       <div className="button-container">
-        <button onClick={resetArray}>Reset Array</button>
+        <button onClick={createArray}>Create Array</button>
         {/* <button>Selection Sort</button> */}
         <button onClick={bubbleSort}>Bubble Sort</button>
         <button onClick={mergeSort}>Merge Sort</button>

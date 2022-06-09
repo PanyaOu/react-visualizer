@@ -12,7 +12,7 @@ async function BubbleSort(array, updateArray, updateAlgoName) {
       if (array[j] <= array[i]) {
         swap(array, i, j);
         updateArray(array);
-        await sleep(1);
+        await sleep(0);
       }
       i = i + 1;
     }
@@ -21,11 +21,10 @@ async function BubbleSort(array, updateArray, updateAlgoName) {
       break;
     }
   }
-  return array;
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+function sleep(seconds) {
+  return new Promise((resolve) => setTimeout(resolve, seconds));
 }
 
 function swap(array, i, j) {
