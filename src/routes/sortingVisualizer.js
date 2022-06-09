@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback, useState } from "react";
 import "../css/sorting.css";
 import BubbleSort from "../sortingAlgorithms/bubbleSort";
+import MergeSort from "../sortingAlgorithms/mergeSort";
 
 const HEIGHT_MULTIPLIER = 3;
 
@@ -35,6 +36,10 @@ function SortingVisualizer() {
     BubbleSort(array, updateArray, updateAlgoName);
   }
 
+  function mergeSort() {
+    MergeSort(array, updateArray, updateAlgoName);
+  }
+
   return (
     <div>
       <h1>Sorting Visualizer {algoName}</h1>
@@ -55,6 +60,7 @@ function SortingVisualizer() {
         <button onClick={resetArray}>Reset Array</button>
         {/* <button>Selection Sort</button> */}
         <button onClick={bubbleSort}>Bubble Sort</button>
+        <button onClick={mergeSort}>Merge Sort</button>
       </div>
     </div>
   );
