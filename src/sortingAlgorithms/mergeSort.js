@@ -65,24 +65,15 @@ function mergeArray(array, startidx, middleidx, endidx) {
     }
   }
 
-
   combineComponent(array, new_array, startidx, endidx);
-
 }
 
-function combineComponent(
-  array,
-  new_array,
-  startidx,
-  endidx
-  ) {
+function combineComponent(array, new_array, startidx, endidx) {
   let newArrIdx = 0;
   for (let i = startidx; i < endidx + 1; i++) {
     array[i] = new_array[newArrIdx];
     newArrIdx++;
   }
-
-  
 }
 
 function sleep(ms) {

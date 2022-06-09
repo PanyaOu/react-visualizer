@@ -14,7 +14,6 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="sorting" element={<SortingVisualizer />} />
       <Route path="pathfinding" element={<PathFindingVisualizer />} />
-
     </Routes>
   </BrowserRouter>
 );
