@@ -1,0 +1,15 @@
+nav {
+  border-bottom-style: solid;
+  padding-bottom: 1rem;
+  border-width: 1px;
+  
+}
+
+.link{
+  margin-left: 10px
+}
+
+/* style={{
+  borderBottom: "solid 1px",
+  paddingBottom: "1rem",
+}} */
