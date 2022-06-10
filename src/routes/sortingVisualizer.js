@@ -6,9 +6,42 @@ import MergeSort from "../sortingAlgorithms/mergeSort";
 const HEIGHT_MULTIPLIER = 3;
 
 function SortingVisualizer() {
+  useEffect(() => {
+    updateDark();
+  });
+
+  const [dark, setDark] = useState(false);
+
   let [flag, setFlag] = useState(false);
   var [array, setArray] = useState([]);
   var [algoName, setAlgoName] = useState("");
+
+  const body = document.body;
+  const theme = localStorage.getItem("theme");
+  const isSolar = localStorage.getItem("isSolar");
+
+  if (theme) {
+    body.classList.add(theme);
+    isSolar && body.classList.add("solar");
+  }
+
+  function updateDark() {
+    var lol = localStorage.getItem("theme");
+    console.log(lol === "dark", "INSIDE");
+
+    if (lol === "dark") {
+      setDark(true);
+    } else {
+      setDark(false);
+    }
+  }
+  console.log(dark);
+
+  // localStorage.clear()
+
+  // console.log(dark)
+  // var lol = localStorage.getItem("theme")
+  // console.log(lol === 'dark', "INSIDE")
 
   function updateArray(array) {
     setArray([...array]);
@@ -40,6 +73,8 @@ function SortingVisualizer() {
     MergeSort(array, updateArray, updateAlgoName);
   }
 
+  console.log(dark);
+
   return (
     <div>
       <h1>Sorting Visualizer {algoName}</h1>
@@ -50,6 +85,7 @@ function SortingVisualizer() {
             key={idx}
             style={{
               height: `${val * HEIGHT_MULTIPLIER}px`,
+              color: dark ? "purple" : "red",
             }}
           >
             {val}
@@ -57,6 +93,7 @@ function SortingVisualizer() {
         ))}
       </div>
       <div className="button-container">
+        {/* <button onClick={updateDark}>haha</button> */}
         <button onClick={createArray}>Create Array</button>
         {/* <button>Selection Sort</button> */}
         <button onClick={bubbleSort}>Bubble Sort</button>
